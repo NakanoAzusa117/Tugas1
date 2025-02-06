@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Pegawai</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(198, 230, 235);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+            color: rgb(0, 0, 0);
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>Data Pegawai</h1>
+    <table id="pegawaiTable">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nama</th>
+                <th>Umur</th>
+                <th>Jabatan</th>
+                <th>Gaji</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+
+    <script>
+        const pegawai = [
+            { no: 1, nama: 'azusa', umur: 30 , jabatan: 'Manager', gaji: 2500000 },
+            { no: 2, nama: 'yui', umur: 21 , jabatan: 'Sekretaris', gaji:2300000 },
+            { no: 3, nama: 'ritsu', umur: 38 , jabatan: 'Bendahara', gaji: 2800000 },
+            { no: 4, nama: 'mugi', umur: 34 , jabatan: 'Staff', gaji: 1900000 },
+            { no: 5, nama: 'mio', umur: 20 ,  jabatan: 'Staff', gaji: 2000000 }
+        ];
+
+        const tableBody = document.querySelector('#pegawaiTable tbody');
+
+        pegawai.forEach(p => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${p.no}</td>
+                <td>${p.nama}</td>
+                <td>${p.umur}</td>
+                <td>${p.jabatan}</td>
+                <td>${p.gaji}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    </script>
+</body>
+</html>
